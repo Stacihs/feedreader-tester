@@ -64,16 +64,16 @@ $(() => {
 	});
 
 	describe('Initial Entries', () => {
-		const container = document.querySelector('.feed');
-		// Confirm that the loadFeed function loads an entry into the .feed container
+		// Confirm that the loadFeed function loads at least one .entry element into the .feed container
 
 		// Loop through each feed
 		beforeEach((done) => {
 			loadFeed(0, done);
 		});
 
-		it('entry loaded', () => {
-			expect(container.childElementCount > 0).toBe(true);
+		it('an entry loaded', () => {
+			const entries = $('.feed .entry');
+			expect(entries.length).not.toBe(0);
 		});
 	});
 
